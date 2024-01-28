@@ -1,0 +1,62 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 w-50 bd-highlight">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Registration Number</span>
+            <input type="text" class="form-control" [(ngModel)]="RegistrationNumber">
+          </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">First Name</span>
+        <input type="text" class="form-control" [(ngModel)]="FirstName">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Last Name</span>
+        <input type="text" class="form-control" [(ngModel)]="LastName">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Department</span>
+        <select class="form-select" [(ngModel)]="Department">
+          <option>--Select--</option>
+          <option *ngFor="let dep of DepartmentList"[ngValue]="dep.departmentCode">
+          {{dep.departmentCode}}--{{dep.departmentName}}
+          </option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Gender</span>
+        <select class="form-select" [(ngModel)]="Gender">
+          <option>--Select--</option>
+          <option *ngFor="let gen of genderList"[ngValue]="gen">
+          {{gen}}
+          </option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Hire Date</span>
+        <input type="date" class="form-control" [(ngModel)]="HireDate">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Termination Date</span>
+        <input type="date" class="form-control" [(ngModel)]="TerminationDate">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Main Address</span>
+        <input type="text" class="form-control" [(ngModel)]="MainAddress">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Mobile Phone</span>
+        <input type="text" class="form-control" [(ngModel)]="MobilePhone">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Home Address</span>
+        <input type="text" class="form-control" [(ngModel)]="HomePhone">
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="addEmployee()" *ngIf="emp.id=='0'" class="btn btn-primary">
+    Create
+  </button>
+  
+  <button type="button" (click)="updateEmployee()" *ngIf="emp.id!='0'" class="btn btn-primary">
+    Update
+  </button>
+  
